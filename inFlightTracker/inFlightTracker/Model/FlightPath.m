@@ -2,7 +2,7 @@
 //  FlightPath.m
 //  inFlightTracker
 //
-//  Created by Wei Shi on 11/26/13.
+//  Created by Wei Shi on 11/27/13.
 //  Copyright (c) 2013 CS193p. All rights reserved.
 //
 
@@ -12,9 +12,11 @@
 
 @implementation FlightPath
 
-@dynamic timestamp;
-@dynamic longitude;
 @dynamic latitude;
+@dynamic longitude;
+@dynamic timestamp;
+@dynamic airline;
+@dynamic flightNumber;
 @dynamic flight;
 
 @end

@@ -25,10 +25,12 @@
 		DF1FC28D1845998900363E45 /* SavedFlightTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC28C1845998900363E45 /* SavedFlightTVC.m */; };
 		DF1FC2971845A4A400363E45 /* NewFlightTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC2961845A4A400363E45 /* NewFlightTVC.m */; };
 		DF1FC29A1845AA6800363E45 /* Flight+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC2991845AA6800363E45 /* Flight+Create.m */; };
-		DF1FC2AA1845B43700363E45 /* FlightPath.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC2A91845B43700363E45 /* FlightPath.m */; };
-		DF1FC2AD1845B43800363E45 /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC2AC1845B43800363E45 /* Flight.m */; };
 		DF1FC2B01845B68F00363E45 /* FlightPathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC2AF1845B68F00363E45 /* FlightPathViewController.m */; };
 		DF1FC2B31845B76E00363E45 /* FlightDetailTBC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC2B21845B76E00363E45 /* FlightDetailTBC.m */; };
+		DFAA70FD18466F8D009C276B /* FlightFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAA70FC18466F8D009C276B /* FlightFetcher.m */; };
+		DFAA710618467337009C276B /* FlightPath+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAA710518467337009C276B /* FlightPath+Create.m */; };
+		DFAA7109184674C0009C276B /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAA7108184674C0009C276B /* Flight.m */; };
+		DFAA710C184674C1009C276B /* FlightPath.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAA710B184674C1009C276B /* FlightPath.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,14 +71,18 @@
 		DF1FC2981845AA6800363E45 /* Flight+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Flight+Create.h"; path = "Model/Flight+Create.h"; sourceTree = "<group>"; };
 		DF1FC2991845AA6800363E45 /* Flight+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Flight+Create.m"; path = "Model/Flight+Create.m"; sourceTree = "<group>"; };
 		DF1FC29B1845AF9E00363E45 /* FlightDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlightDatabase.h; sourceTree = "<group>"; };
-		DF1FC2A81845B43700363E45 /* FlightPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlightPath.h; path = Model/FlightPath.h; sourceTree = "<group>"; };
-		DF1FC2A91845B43700363E45 /* FlightPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlightPath.m; path = Model/FlightPath.m; sourceTree = "<group>"; };
-		DF1FC2AB1845B43800363E45 /* Flight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flight.h; path = Model/Flight.h; sourceTree = "<group>"; };
-		DF1FC2AC1845B43800363E45 /* Flight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Flight.m; path = Model/Flight.m; sourceTree = "<group>"; };
 		DF1FC2AE1845B68F00363E45 /* FlightPathViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightPathViewController.h; sourceTree = "<group>"; };
 		DF1FC2AF1845B68F00363E45 /* FlightPathViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightPathViewController.m; sourceTree = "<group>"; };
 		DF1FC2B11845B76E00363E45 /* FlightDetailTBC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightDetailTBC.h; sourceTree = "<group>"; };
 		DF1FC2B21845B76E00363E45 /* FlightDetailTBC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightDetailTBC.m; sourceTree = "<group>"; };
+		DFAA70FB18466F8D009C276B /* FlightFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightFetcher.h; sourceTree = "<group>"; };
+		DFAA70FC18466F8D009C276B /* FlightFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightFetcher.m; sourceTree = "<group>"; };
+		DFAA710418467337009C276B /* FlightPath+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FlightPath+Create.h"; path = "Model/FlightPath+Create.h"; sourceTree = "<group>"; };
+		DFAA710518467337009C276B /* FlightPath+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FlightPath+Create.m"; path = "Model/FlightPath+Create.m"; sourceTree = "<group>"; };
+		DFAA7107184674C0009C276B /* Flight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flight.h; path = Model/Flight.h; sourceTree = "<group>"; };
+		DFAA7108184674C0009C276B /* Flight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Flight.m; path = Model/Flight.m; sourceTree = "<group>"; };
+		DFAA710A184674C1009C276B /* FlightPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlightPath.h; path = Model/FlightPath.h; sourceTree = "<group>"; };
+		DFAA710B184674C1009C276B /* FlightPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlightPath.m; path = Model/FlightPath.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,7 @@
 		DF1B3DE8182F5A00001506DB /* inFlightTracker */ = {
 			isa = PBXGroup;
 			children = (
+				DFAA70FA18466F6B009C276B /* Data */,
 				DF1FC29418459B0A00363E45 /* Model */,
 				DF1B3DF1182F5A00001506DB /* IFTAppDelegate.h */,
 				DF1B3DF2182F5A00001506DB /* IFTAppDelegate.m */,
@@ -190,14 +197,25 @@
 		DF1FC29418459B0A00363E45 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DF1FC2AB1845B43800363E45 /* Flight.h */,
-				DF1FC2AC1845B43800363E45 /* Flight.m */,
-				DF1FC2A81845B43700363E45 /* FlightPath.h */,
-				DF1FC2A91845B43700363E45 /* FlightPath.m */,
+				DFAA710A184674C1009C276B /* FlightPath.h */,
+				DFAA710B184674C1009C276B /* FlightPath.m */,
+				DFAA7107184674C0009C276B /* Flight.h */,
+				DFAA7108184674C0009C276B /* Flight.m */,
+				DFAA710418467337009C276B /* FlightPath+Create.h */,
+				DFAA710518467337009C276B /* FlightPath+Create.m */,
 				DF1FC2981845AA6800363E45 /* Flight+Create.h */,
 				DF1FC2991845AA6800363E45 /* Flight+Create.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		DFAA70FA18466F6B009C276B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DFAA70FB18466F8D009C276B /* FlightFetcher.h */,
+				DFAA70FC18466F8D009C276B /* FlightFetcher.m */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,12 +317,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF1FC29A1845AA6800363E45 /* Flight+Create.m in Sources */,
+				DFAA70FD18466F8D009C276B /* FlightFetcher.m in Sources */,
 				DF1B3DF3182F5A00001506DB /* IFTAppDelegate.m in Sources */,
 				DF1FC28D1845998900363E45 /* SavedFlightTVC.m in Sources */,
 				DF1FC2B31845B76E00363E45 /* FlightDetailTBC.m in Sources */,
-				DF1FC2AA1845B43700363E45 /* FlightPath.m in Sources */,
 				DF1FC28A1845991200363E45 /* CoreDataTableViewController.m in Sources */,
-				DF1FC2AD1845B43800363E45 /* Flight.m in Sources */,
+				DFAA7109184674C0009C276B /* Flight.m in Sources */,
+				DFAA710C184674C1009C276B /* FlightPath.m in Sources */,
+				DFAA710618467337009C276B /* FlightPath+Create.m in Sources */,
 				DF1FC2971845A4A400363E45 /* NewFlightTVC.m in Sources */,
 				DF1FC287184594BA00363E45 /* inFlightTracker.xcdatamodeld in Sources */,
 				DF1B3DEF182F5A00001506DB /* main.m in Sources */,

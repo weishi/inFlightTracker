@@ -37,11 +37,12 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"tbc"]){
-        NSLog(@"segue to tbc");
         NSIndexPath *path = [self.tableView indexPathForSelectedRow];
         Flight *flight = [self.fetchedResultsController objectAtIndexPath:path];
+        NSLog(@"segue to tbc selected flight%@%@", flight.airline, flight.flightNumber);
         FlightDetailTBC *tbc=segue.destinationViewController;
         tbc.flight=flight;
+        tbc.context=self.context;
     }else{
         NSLog(@"segue to add flight");
         NewFlightTVC *tvc=segue.destinationViewController;

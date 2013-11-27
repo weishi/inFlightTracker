@@ -10,4 +10,5 @@
 #import "Flight.h"
 @interface FlightDetailTBC : UITabBarController
 @property (nonatomic, strong) Flight *flight;
+@property (nonatomic, strong) NSManagedObjectContext *context;
 @end

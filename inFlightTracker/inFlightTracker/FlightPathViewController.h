@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FlightDatabase.h"
+#import "Flight.h"
+#import "FlightPath.h"
+#import "CoreDataTableViewController.h"
+#import "FlightDetailTBC.h"
 
-@interface FlightPathViewController : UITableViewController
-
+@interface FlightPathViewController : CoreDataTableViewController
+@property (nonatomic, strong) NSManagedObjectContext *context;
+@property (nonatomic, strong) Flight *flight;
 @end
