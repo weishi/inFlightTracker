@@ -14,14 +14,21 @@
 		DF1B3DEF182F5A00001506DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1B3DEE182F5A00001506DB /* main.m */; };
 		DF1B3DF3182F5A00001506DB /* IFTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1B3DF2182F5A00001506DB /* IFTAppDelegate.m */; };
 		DF1B3DF6182F5A00001506DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF1B3DF4182F5A00001506DB /* Main.storyboard */; };
-		DF1B3DF9182F5A00001506DB /* IFTFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1B3DF8182F5A00001506DB /* IFTFirstViewController.m */; };
-		DF1B3DFC182F5A00001506DB /* IFTSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1B3DFB182F5A00001506DB /* IFTSecondViewController.m */; };
 		DF1B3DFE182F5A00001506DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF1B3DFD182F5A00001506DB /* Images.xcassets */; };
 		DF1B3E05182F5A00001506DB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1B3E04182F5A00001506DB /* XCTest.framework */; };
 		DF1B3E06182F5A00001506DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1B3DE2182F5A00001506DB /* Foundation.framework */; };
 		DF1B3E07182F5A00001506DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1B3DE6182F5A00001506DB /* UIKit.framework */; };
 		DF1B3E0F182F5A00001506DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF1B3E0D182F5A00001506DB /* InfoPlist.strings */; };
 		DF1B3E11182F5A00001506DB /* inFlightTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1B3E10182F5A00001506DB /* inFlightTrackerTests.m */; };
+		DF1FC287184594BA00363E45 /* inFlightTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC285184594BA00363E45 /* inFlightTracker.xcdatamodeld */; };
+		DF1FC28A1845991200363E45 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC2891845991200363E45 /* CoreDataTableViewController.m */; };
+		DF1FC28D1845998900363E45 /* SavedFlightTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC28C1845998900363E45 /* SavedFlightTVC.m */; };
+		DF1FC2971845A4A400363E45 /* NewFlightTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC2961845A4A400363E45 /* NewFlightTVC.m */; };
+		DF1FC29A1845AA6800363E45 /* Flight+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC2991845AA6800363E45 /* Flight+Create.m */; };
+		DF1FC2AA1845B43700363E45 /* FlightPath.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC2A91845B43700363E45 /* FlightPath.m */; };
+		DF1FC2AD1845B43800363E45 /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC2AC1845B43800363E45 /* Flight.m */; };
+		DF1FC2B01845B68F00363E45 /* FlightPathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC2AF1845B68F00363E45 /* FlightPathViewController.m */; };
+		DF1FC2B31845B76E00363E45 /* FlightDetailTBC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1FC2B21845B76E00363E45 /* FlightDetailTBC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,16 +53,30 @@
 		DF1B3DF1182F5A00001506DB /* IFTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTAppDelegate.h; sourceTree = "<group>"; };
 		DF1B3DF2182F5A00001506DB /* IFTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTAppDelegate.m; sourceTree = "<group>"; };
 		DF1B3DF5182F5A00001506DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DF1B3DF7182F5A00001506DB /* IFTFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTFirstViewController.h; sourceTree = "<group>"; };
-		DF1B3DF8182F5A00001506DB /* IFTFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTFirstViewController.m; sourceTree = "<group>"; };
-		DF1B3DFA182F5A00001506DB /* IFTSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFTSecondViewController.h; sourceTree = "<group>"; };
-		DF1B3DFB182F5A00001506DB /* IFTSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFTSecondViewController.m; sourceTree = "<group>"; };
 		DF1B3DFD182F5A00001506DB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DF1B3E03182F5A00001506DB /* inFlightTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = inFlightTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF1B3E04182F5A00001506DB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DF1B3E0C182F5A00001506DB /* inFlightTrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "inFlightTrackerTests-Info.plist"; sourceTree = "<group>"; };
 		DF1B3E0E182F5A00001506DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DF1B3E10182F5A00001506DB /* inFlightTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = inFlightTrackerTests.m; sourceTree = "<group>"; };
+		DF1FC286184594BA00363E45 /* inFlightTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = inFlightTracker.xcdatamodel; sourceTree = "<group>"; };
+		DF1FC2881845991200363E45 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		DF1FC2891845991200363E45 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		DF1FC28B1845998900363E45 /* SavedFlightTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedFlightTVC.h; sourceTree = "<group>"; };
+		DF1FC28C1845998900363E45 /* SavedFlightTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedFlightTVC.m; sourceTree = "<group>"; };
+		DF1FC2951845A4A400363E45 /* NewFlightTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFlightTVC.h; sourceTree = "<group>"; };
+		DF1FC2961845A4A400363E45 /* NewFlightTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFlightTVC.m; sourceTree = "<group>"; };
+		DF1FC2981845AA6800363E45 /* Flight+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Flight+Create.h"; path = "Model/Flight+Create.h"; sourceTree = "<group>"; };
+		DF1FC2991845AA6800363E45 /* Flight+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Flight+Create.m"; path = "Model/Flight+Create.m"; sourceTree = "<group>"; };
+		DF1FC29B1845AF9E00363E45 /* FlightDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlightDatabase.h; sourceTree = "<group>"; };
+		DF1FC2A81845B43700363E45 /* FlightPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlightPath.h; path = Model/FlightPath.h; sourceTree = "<group>"; };
+		DF1FC2A91845B43700363E45 /* FlightPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlightPath.m; path = Model/FlightPath.m; sourceTree = "<group>"; };
+		DF1FC2AB1845B43800363E45 /* Flight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flight.h; path = Model/Flight.h; sourceTree = "<group>"; };
+		DF1FC2AC1845B43800363E45 /* Flight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Flight.m; path = Model/Flight.m; sourceTree = "<group>"; };
+		DF1FC2AE1845B68F00363E45 /* FlightPathViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightPathViewController.h; sourceTree = "<group>"; };
+		DF1FC2AF1845B68F00363E45 /* FlightPathViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightPathViewController.m; sourceTree = "<group>"; };
+		DF1FC2B11845B76E00363E45 /* FlightDetailTBC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightDetailTBC.h; sourceTree = "<group>"; };
+		DF1FC2B21845B76E00363E45 /* FlightDetailTBC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightDetailTBC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,15 +136,24 @@
 		DF1B3DE8182F5A00001506DB /* inFlightTracker */ = {
 			isa = PBXGroup;
 			children = (
+				DF1FC29418459B0A00363E45 /* Model */,
 				DF1B3DF1182F5A00001506DB /* IFTAppDelegate.h */,
 				DF1B3DF2182F5A00001506DB /* IFTAppDelegate.m */,
 				DF1B3DF4182F5A00001506DB /* Main.storyboard */,
-				DF1B3DF7182F5A00001506DB /* IFTFirstViewController.h */,
-				DF1B3DF8182F5A00001506DB /* IFTFirstViewController.m */,
-				DF1B3DFA182F5A00001506DB /* IFTSecondViewController.h */,
-				DF1B3DFB182F5A00001506DB /* IFTSecondViewController.m */,
+				DF1FC2B11845B76E00363E45 /* FlightDetailTBC.h */,
+				DF1FC2B21845B76E00363E45 /* FlightDetailTBC.m */,
+				DF1FC29B1845AF9E00363E45 /* FlightDatabase.h */,
+				DF1FC2951845A4A400363E45 /* NewFlightTVC.h */,
+				DF1FC2961845A4A400363E45 /* NewFlightTVC.m */,
+				DF1FC28B1845998900363E45 /* SavedFlightTVC.h */,
+				DF1FC28C1845998900363E45 /* SavedFlightTVC.m */,
+				DF1FC2AE1845B68F00363E45 /* FlightPathViewController.h */,
+				DF1FC2AF1845B68F00363E45 /* FlightPathViewController.m */,
 				DF1B3DFD182F5A00001506DB /* Images.xcassets */,
 				DF1B3DE9182F5A00001506DB /* Supporting Files */,
+				DF1FC285184594BA00363E45 /* inFlightTracker.xcdatamodeld */,
+				DF1FC2881845991200363E45 /* CoreDataTableViewController.h */,
+				DF1FC2891845991200363E45 /* CoreDataTableViewController.m */,
 			);
 			path = inFlightTracker;
 			sourceTree = "<group>";
@@ -155,6 +185,19 @@
 				DF1B3E0D182F5A00001506DB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DF1FC29418459B0A00363E45 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF1FC2AB1845B43800363E45 /* Flight.h */,
+				DF1FC2AC1845B43800363E45 /* Flight.m */,
+				DF1FC2A81845B43700363E45 /* FlightPath.h */,
+				DF1FC2A91845B43700363E45 /* FlightPath.m */,
+				DF1FC2981845AA6800363E45 /* Flight+Create.h */,
+				DF1FC2991845AA6800363E45 /* Flight+Create.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,10 +298,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF1FC29A1845AA6800363E45 /* Flight+Create.m in Sources */,
 				DF1B3DF3182F5A00001506DB /* IFTAppDelegate.m in Sources */,
-				DF1B3DF9182F5A00001506DB /* IFTFirstViewController.m in Sources */,
-				DF1B3DFC182F5A00001506DB /* IFTSecondViewController.m in Sources */,
+				DF1FC28D1845998900363E45 /* SavedFlightTVC.m in Sources */,
+				DF1FC2B31845B76E00363E45 /* FlightDetailTBC.m in Sources */,
+				DF1FC2AA1845B43700363E45 /* FlightPath.m in Sources */,
+				DF1FC28A1845991200363E45 /* CoreDataTableViewController.m in Sources */,
+				DF1FC2AD1845B43800363E45 /* Flight.m in Sources */,
+				DF1FC2971845A4A400363E45 /* NewFlightTVC.m in Sources */,
+				DF1FC287184594BA00363E45 /* inFlightTracker.xcdatamodeld in Sources */,
 				DF1B3DEF182F5A00001506DB /* main.m in Sources */,
+				DF1FC2B01845B68F00363E45 /* FlightPathViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +517,7 @@
 				DF1B3E16182F5A00001506DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DF1B3E17182F5A00001506DB /* Build configuration list for PBXNativeTarget "inFlightTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -475,8 +526,23 @@
 				DF1B3E19182F5A00001506DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DF1FC285184594BA00363E45 /* inFlightTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DF1FC286184594BA00363E45 /* inFlightTracker.xcdatamodel */,
+			);
+			currentVersion = DF1FC286184594BA00363E45 /* inFlightTracker.xcdatamodel */;
+			name = inFlightTracker.xcdatamodeld;
+			path = Model/inFlightTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DF1B3DD7182F5A00001506DB /* Project object */;
 }

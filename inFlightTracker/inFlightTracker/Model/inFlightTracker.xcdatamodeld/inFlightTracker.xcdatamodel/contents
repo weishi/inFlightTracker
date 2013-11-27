@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Flight" representedClassName="Flight" syncable="YES">
+        <attribute name="actualDepartureTime" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="airline" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="arrivalCity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="departureCity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="departureDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="flightNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="path" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FlightPath" inverseName="flight" inverseEntity="FlightPath" syncable="YES"/>
+    </entity>
+    <entity name="FlightPath" representedClassName="FlightPath" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="flight" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Flight" inverseName="path" inverseEntity="Flight" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Flight" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FlightPath" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
