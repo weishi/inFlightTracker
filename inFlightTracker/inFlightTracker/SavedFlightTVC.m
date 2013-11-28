@@ -43,6 +43,7 @@
         FlightDetailTBC *tbc=segue.destinationViewController;
         tbc.flight=flight;
         tbc.context=self.context;
+        tbc.timePast=0;
     }else{
         NSLog(@"segue to add flight");
         NewFlightTVC *tvc=segue.destinationViewController;

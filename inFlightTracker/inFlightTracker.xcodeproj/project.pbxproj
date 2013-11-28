@@ -31,6 +31,11 @@
 		DFAA710618467337009C276B /* FlightPath+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAA710518467337009C276B /* FlightPath+Create.m */; };
 		DFAA7109184674C0009C276B /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAA7108184674C0009C276B /* Flight.m */; };
 		DFAA710C184674C1009C276B /* FlightPath.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAA710B184674C1009C276B /* FlightPath.m */; };
+		DFAA710F18467A33009C276B /* FlightMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAA710E18467A33009C276B /* FlightMapViewController.m */; };
+		DFAA711118467B4A009C276B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAA711018467B4A009C276B /* MapKit.framework */; };
+		DFE548361847C6D8003A40D4 /* AirportPin.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE548351847C6D8003A40D4 /* AirportPin.m */; };
+		DFE548391847E523003A40D4 /* FlightInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE548381847E523003A40D4 /* FlightInfoViewController.m */; };
+		DFE5483C184803AE003A40D4 /* Flight+Info.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE5483B184803AE003A40D4 /* Flight+Info.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +88,15 @@
 		DFAA7108184674C0009C276B /* Flight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Flight.m; path = Model/Flight.m; sourceTree = "<group>"; };
 		DFAA710A184674C1009C276B /* FlightPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlightPath.h; path = Model/FlightPath.h; sourceTree = "<group>"; };
 		DFAA710B184674C1009C276B /* FlightPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlightPath.m; path = Model/FlightPath.m; sourceTree = "<group>"; };
+		DFAA710D18467A33009C276B /* FlightMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightMapViewController.h; sourceTree = "<group>"; };
+		DFAA710E18467A33009C276B /* FlightMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightMapViewController.m; sourceTree = "<group>"; };
+		DFAA711018467B4A009C276B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DFE548341847C6D8003A40D4 /* AirportPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirportPin.h; sourceTree = "<group>"; };
+		DFE548351847C6D8003A40D4 /* AirportPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirportPin.m; sourceTree = "<group>"; };
+		DFE548371847E523003A40D4 /* FlightInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightInfoViewController.h; sourceTree = "<group>"; };
+		DFE548381847E523003A40D4 /* FlightInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightInfoViewController.m; sourceTree = "<group>"; };
+		DFE5483A184803AE003A40D4 /* Flight+Info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Flight+Info.h"; path = "Model/Flight+Info.h"; sourceTree = "<group>"; };
+		DFE5483B184803AE003A40D4 /* Flight+Info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Flight+Info.m"; path = "Model/Flight+Info.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFAA711118467B4A009C276B /* MapKit.framework in Frameworks */,
 				DF1B3DE5182F5A00001506DB /* CoreGraphics.framework in Frameworks */,
 				DF1B3DE7182F5A00001506DB /* UIKit.framework in Frameworks */,
 				DF1B3DE3182F5A00001506DB /* Foundation.framework in Frameworks */,
@@ -131,6 +146,7 @@
 		DF1B3DE1182F5A00001506DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DFAA711018467B4A009C276B /* MapKit.framework */,
 				DF1B3DE2182F5A00001506DB /* Foundation.framework */,
 				DF1B3DE4182F5A00001506DB /* CoreGraphics.framework */,
 				DF1B3DE6182F5A00001506DB /* UIKit.framework */,
@@ -147,13 +163,19 @@
 				DF1B3DF1182F5A00001506DB /* IFTAppDelegate.h */,
 				DF1B3DF2182F5A00001506DB /* IFTAppDelegate.m */,
 				DF1B3DF4182F5A00001506DB /* Main.storyboard */,
-				DF1FC2B11845B76E00363E45 /* FlightDetailTBC.h */,
-				DF1FC2B21845B76E00363E45 /* FlightDetailTBC.m */,
 				DF1FC29B1845AF9E00363E45 /* FlightDatabase.h */,
 				DF1FC2951845A4A400363E45 /* NewFlightTVC.h */,
 				DF1FC2961845A4A400363E45 /* NewFlightTVC.m */,
 				DF1FC28B1845998900363E45 /* SavedFlightTVC.h */,
 				DF1FC28C1845998900363E45 /* SavedFlightTVC.m */,
+				DF1FC2B11845B76E00363E45 /* FlightDetailTBC.h */,
+				DF1FC2B21845B76E00363E45 /* FlightDetailTBC.m */,
+				DFE548341847C6D8003A40D4 /* AirportPin.h */,
+				DFE548351847C6D8003A40D4 /* AirportPin.m */,
+				DFE548371847E523003A40D4 /* FlightInfoViewController.h */,
+				DFE548381847E523003A40D4 /* FlightInfoViewController.m */,
+				DFAA710D18467A33009C276B /* FlightMapViewController.h */,
+				DFAA710E18467A33009C276B /* FlightMapViewController.m */,
 				DF1FC2AE1845B68F00363E45 /* FlightPathViewController.h */,
 				DF1FC2AF1845B68F00363E45 /* FlightPathViewController.m */,
 				DF1B3DFD182F5A00001506DB /* Images.xcassets */,
@@ -205,6 +227,8 @@
 				DFAA710518467337009C276B /* FlightPath+Create.m */,
 				DF1FC2981845AA6800363E45 /* Flight+Create.h */,
 				DF1FC2991845AA6800363E45 /* Flight+Create.m */,
+				DFE5483A184803AE003A40D4 /* Flight+Info.h */,
+				DFE5483B184803AE003A40D4 /* Flight+Info.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -319,15 +343,19 @@
 				DF1FC29A1845AA6800363E45 /* Flight+Create.m in Sources */,
 				DFAA70FD18466F8D009C276B /* FlightFetcher.m in Sources */,
 				DF1B3DF3182F5A00001506DB /* IFTAppDelegate.m in Sources */,
+				DFAA710F18467A33009C276B /* FlightMapViewController.m in Sources */,
 				DF1FC28D1845998900363E45 /* SavedFlightTVC.m in Sources */,
 				DF1FC2B31845B76E00363E45 /* FlightDetailTBC.m in Sources */,
 				DF1FC28A1845991200363E45 /* CoreDataTableViewController.m in Sources */,
+				DFE548361847C6D8003A40D4 /* AirportPin.m in Sources */,
 				DFAA7109184674C0009C276B /* Flight.m in Sources */,
 				DFAA710C184674C1009C276B /* FlightPath.m in Sources */,
 				DFAA710618467337009C276B /* FlightPath+Create.m in Sources */,
 				DF1FC2971845A4A400363E45 /* NewFlightTVC.m in Sources */,
 				DF1FC287184594BA00363E45 /* inFlightTracker.xcdatamodeld in Sources */,
 				DF1B3DEF182F5A00001506DB /* main.m in Sources */,
+				DFE5483C184803AE003A40D4 /* Flight+Info.m in Sources */,
+				DFE548391847E523003A40D4 /* FlightInfoViewController.m in Sources */,
 				DF1FC2B01845B68F00363E45 /* FlightPathViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

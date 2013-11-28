@@ -209,26 +209,137 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <connections>
                         <segue destination="Qg8-Gv-aQh" kind="relationship" relationship="viewControllers" id="BUN-hr-lL6"/>
                         <segue destination="yZt-Wb-UTo" kind="relationship" relationship="viewControllers" id="xjv-Si-jEc"/>
+                        <segue destination="t2p-3b-mur" kind="relationship" relationship="viewControllers" id="GYH-L7-CWB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="589" y="71"/>
         </scene>
-        <!--View Controller - Info-->
+        <!--Flight Info View Controller - Info-->
         <scene sceneID="WSD-Ry-c3J">
             <objects>
-                <viewController id="Qg8-Gv-aQh" sceneMemberID="viewController">
+                <viewController id="Qg8-Gv-aQh" customClass="FlightInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i4N-oG-qr8"/>
                         <viewControllerLayoutGuide type="bottom" id="Zcr-G2-3FZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CN9-T5-Hpx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vNn-sC-qV2">
+                                <rect key="frame" x="0.0" y="49" width="320" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rdn-4A-tTK">
+                                <rect key="frame" x="251" y="88" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleAutoDetect:" destination="Qg8-Gv-aQh" eventType="valueChanged" id="01U-D9-Uqg"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto detect take-off time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igN-cw-LBs">
+                                <rect key="frame" x="20" y="93" width="223" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga4-3D-VFE">
+                                <rect key="frame" x="0.0" y="20" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xrH-Tk-b6M">
+                                <rect key="frame" x="0.0" y="159" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="407367743.78148699">
+                                    <!--2013-11-28 21:42:23 +0000-->
+                                </date>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <mutableData key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</mutableData>
+                                </timeZone>
+                                <connections>
+                                    <action selector="changeDatePicker:" destination="Qg8-Gv-aQh" eventType="valueChanged" id="jrh-as-7hk"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take-off time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXi-Vn-0qz">
+                                <rect key="frame" x="20" y="130" width="112" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="m4M-pv-A6J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqO-7q-bAh">
+                                <rect key="frame" x="140" y="130" width="160" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVk-JF-hFP">
+                                <rect key="frame" x="0.0" y="59" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vNn-sC-qV2" firstAttribute="trailing" secondItem="Ga4-3D-VFE" secondAttribute="trailing" id="26O-Nb-tGW"/>
+                            <constraint firstAttribute="trailing" secondItem="rdn-4A-tTK" secondAttribute="trailing" constant="20" symbolic="YES" id="CnT-SQ-io2"/>
+                            <constraint firstItem="wVk-JF-hFP" firstAttribute="leading" secondItem="xrH-Tk-b6M" secondAttribute="leading" id="HE7-YX-Nik"/>
+                            <constraint firstItem="rdn-4A-tTK" firstAttribute="leading" secondItem="igN-cw-LBs" secondAttribute="trailing" constant="8" symbolic="YES" id="JJg-pG-DkZ"/>
+                            <constraint firstItem="vNn-sC-qV2" firstAttribute="trailing" secondItem="wVk-JF-hFP" secondAttribute="trailing" id="Lue-z5-i8a"/>
+                            <constraint firstItem="vNn-sC-qV2" firstAttribute="leading" secondItem="wVk-JF-hFP" secondAttribute="leading" id="No5-zj-hkh"/>
+                            <constraint firstItem="vNn-sC-qV2" firstAttribute="top" secondItem="Ga4-3D-VFE" secondAttribute="bottom" constant="8" symbolic="YES" id="OIJ-Im-2Z4"/>
+                            <constraint firstItem="xrH-Tk-b6M" firstAttribute="top" secondItem="FXi-Vn-0qz" secondAttribute="bottom" constant="8" symbolic="YES" id="Snr-dO-Dok"/>
+                            <constraint firstItem="DqO-7q-bAh" firstAttribute="top" secondItem="rdn-4A-tTK" secondAttribute="bottom" constant="11" id="TD4-UK-qzX"/>
+                            <constraint firstItem="rdn-4A-tTK" firstAttribute="top" secondItem="wVk-JF-hFP" secondAttribute="bottom" constant="8" symbolic="YES" id="UHw-nh-WUa"/>
+                            <constraint firstAttribute="trailing" secondItem="vNn-sC-qV2" secondAttribute="trailing" id="UXr-wl-ock"/>
+                            <constraint firstItem="rdn-4A-tTK" firstAttribute="trailing" secondItem="DqO-7q-bAh" secondAttribute="trailing" id="Wgu-kM-pba"/>
+                            <constraint firstItem="xrH-Tk-b6M" firstAttribute="trailing" secondItem="wVk-JF-hFP" secondAttribute="trailing" id="XsJ-zR-rko"/>
+                            <constraint firstItem="DqO-7q-bAh" firstAttribute="leading" secondItem="FXi-Vn-0qz" secondAttribute="trailing" constant="8" symbolic="YES" id="Zxc-a6-bws"/>
+                            <constraint firstItem="Ga4-3D-VFE" firstAttribute="top" secondItem="CN9-T5-Hpx" secondAttribute="top" constant="20" symbolic="YES" id="eLb-YZ-vMG"/>
+                            <constraint firstItem="FXi-Vn-0qz" firstAttribute="baseline" secondItem="DqO-7q-bAh" secondAttribute="baseline" id="qH4-b9-uWU"/>
+                            <constraint firstItem="vNn-sC-qV2" firstAttribute="leading" secondItem="Ga4-3D-VFE" secondAttribute="leading" id="rUs-Sc-KeT"/>
+                            <constraint firstItem="wVk-JF-hFP" firstAttribute="leading" secondItem="CN9-T5-Hpx" secondAttribute="leading" id="rpR-Gs-eZe"/>
+                            <constraint firstItem="igN-cw-LBs" firstAttribute="leading" secondItem="CN9-T5-Hpx" secondAttribute="leading" constant="20" symbolic="YES" id="rsE-9g-4Tp"/>
+                            <constraint firstItem="FXi-Vn-0qz" firstAttribute="leading" secondItem="igN-cw-LBs" secondAttribute="leading" id="uPZ-fZ-mn4"/>
+                            <constraint firstItem="igN-cw-LBs" firstAttribute="centerY" secondItem="rdn-4A-tTK" secondAttribute="centerY" id="uat-z8-E2r"/>
+                            <constraint firstItem="wVk-JF-hFP" firstAttribute="top" secondItem="vNn-sC-qV2" secondAttribute="bottom" constant="8" symbolic="YES" id="yWU-qh-6D0"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Info" id="5dT-EU-7IH"/>
+                    <connections>
+                        <outlet property="autoDetectSwitch" destination="rdn-4A-tTK" id="VPK-Fc-Znz"/>
+                        <outlet property="dateLabel" destination="DqO-7q-bAh" id="boN-4m-Je0"/>
+                        <outlet property="datePicker" destination="xrH-Tk-b6M" id="Qm3-lG-NqD"/>
+                        <outlet property="hours" destination="wVk-JF-hFP" id="x2Q-t8-BiD"/>
+                        <outlet property="progressBar" destination="vNn-sC-qV2" id="6aX-vq-ooV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvz-br-rZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -278,6 +389,34 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFu-BU-XYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1130" y="382"/>
+        </scene>
+        <!--Flight Map View Controller - Map-->
+        <scene sceneID="Ein-iI-Hxw">
+            <objects>
+                <viewController id="t2p-3b-mur" customClass="FlightMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TbG-a5-ak3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gcc-YH-bbn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DY3-Pa-33X">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Phd-8l-iZZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" id="dQR-Ke-sbm"/>
+                    <connections>
+                        <outlet property="flightMap" destination="Phd-8l-iZZ" id="Ont-ju-vdJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sG7-1u-wyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1130" y="1026"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ioo-QP-Eds">

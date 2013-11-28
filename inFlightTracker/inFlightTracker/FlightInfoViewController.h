@@ -1,15 +1,15 @@
 //
-//  FlightDetailTBC.h
+//  FlightInfoViewController.h
 //  inFlightTracker
 //
-//  Created by Wei Shi on 11/26/13.
+//  Created by Wei Shi on 11/28/13.
 //  Copyright (c) 2013 CS193p. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "Flight.h"
-@interface FlightDetailTBC : UITabBarController
-@property (nonatomic, strong) Flight *flight;
+
+@interface FlightInfoViewController : UIViewController
 @property (nonatomic, strong) NSManagedObjectContext *context;
-@property (nonatomic) double timePast;
+@property (nonatomic, strong) Flight *flight;
 @end
