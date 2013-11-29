@@ -11,6 +11,8 @@
 #import "FlightDetailTBC.h"
 #import "FlightPath.h"
 #import "AirportPin.h"
+#import <ImageIO/ImageIO.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface FlightMapViewController ()
 
@@ -24,16 +26,52 @@
 
 }
 
+- (IBAction)takePhoto:(id)sender {
+    NSLog(@"takePhoto");
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = NO;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    NSMutableDictionary *imageMetaData = [NSMutableDictionary dictionary];
+    [imageMetaData setDictionary:[[info objectForKey:UIImagePickerControllerMediaMetadata] copy]];
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    FlightPath *p = [self getCurrentPosition:self.timePast ForFlight:self.flight];
+    if(p){
+        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+        CLLocation *pCl=[[CLLocation alloc]initWithLatitude:[p.latitude doubleValue] longitude: [p.longitude doubleValue]];
+        [imageMetaData setObject:[self updateExif:pCl] forKey:(NSString*)kCGImagePropertyGPSDictionary];
+        [library writeImageToSavedPhotosAlbum:image.CGImage metadata:imageMetaData completionBlock:^(NSURL *assetURL, NSError *error) {
+            if (error == nil) {
+                NSLog(@"Image saved.");
+            } else {
+                NSLog(@"Error saving image.");
+            }}];
+    }
+
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
 
 -(void) viewWillAppear: (BOOL) animated {
     FlightDetailTBC *tbc=(FlightDetailTBC *)self.tabBarController;
     self.flight=tbc.flight;
     self.context = tbc.context;
+    self.timePast=tbc.timePast;
     [self createPinsForFlight:self.flight];
     [self drawCurrentPosition:tbc.timePast ForFlight:self.flight];
 }
 
--(void)drawCurrentPosition:(double)timePast ForFlight:(Flight *)flight{
+-(FlightPath *)getCurrentPosition:(double)timePast ForFlight:(Flight *)flight{
     NSSet *paths=flight.path;
     NSArray *sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:YES]];
     
@@ -41,11 +79,18 @@
     for (NSInteger index = 0; index < [paths count]; index++) {
         FlightPath *p = [sortedPath objectAtIndex:index];
         if([p.timestamp doubleValue]>=timePast/3600/24){
+            return p;
+        }
+    }
+    return nil;
+}
+
+-(void)drawCurrentPosition:(double)timePast ForFlight:(Flight *)flight{
+    FlightPath *p = [self getCurrentPosition:timePast ForFlight:flight];
+    if(p){
             CLLocationCoordinate2D pCoor=CLLocationCoordinate2DMake([p.latitude doubleValue], [p.longitude doubleValue]);
             AirportPin *pPin=[[AirportPin alloc]initWithCoordinates:pCoor placeName:@"Current Position" description:@""];
             [self.flightMap addAnnotation:pPin];
-            break;
-        }
     }
 
 }
@@ -101,10 +146,37 @@
 	// Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+-(NSMutableDictionary *)updateExif:(CLLocation *)currentLocation{
+    
+    
+    NSMutableDictionary* locDict = [[NSMutableDictionary alloc] init];
+    
+    
+    CLLocationDegrees exifLatitude = currentLocation.coordinate.latitude;
+    CLLocationDegrees exifLongitude = currentLocation.coordinate.longitude;
+    
+    [locDict setObject:currentLocation.timestamp forKey:(NSString*)kCGImagePropertyGPSTimeStamp];
+    
+    if (exifLatitude <0.0){
+        exifLatitude = exifLatitude*(-1);
+        [locDict setObject:@"S" forKey:(NSString*)kCGImagePropertyGPSLatitudeRef];
+    }else{
+        [locDict setObject:@"N" forKey:(NSString*)kCGImagePropertyGPSLatitudeRef];
+    }
+    [locDict setObject:[NSNumber numberWithFloat:exifLatitude] forKey:(NSString*)kCGImagePropertyGPSLatitude];
+    
+    if (exifLongitude <0.0){
+        exifLongitude=exifLongitude*(-1);
+        [locDict setObject:@"W" forKey:(NSString*)kCGImagePropertyGPSLongitudeRef];
+    }else{
+        [locDict setObject:@"E" forKey:(NSString*)kCGImagePropertyGPSLongitudeRef];
+    }
+    [locDict setObject:[NSNumber numberWithFloat:exifLongitude] forKey:(NSString*) kCGImagePropertyGPSLongitude];
+    
+    
+    return locDict;
 }
 
 @end

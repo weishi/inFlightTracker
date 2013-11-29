@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Flight.h"
 
-@interface FlightMapViewController : UIViewController<MKMapViewDelegate>
+@interface FlightMapViewController : UIViewController<MKMapViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, strong) NSManagedObjectContext *context;
 @property (nonatomic, strong) Flight *flight;
+@property (nonatomic) double timePast;
 @end

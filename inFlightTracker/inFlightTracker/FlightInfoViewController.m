@@ -45,6 +45,7 @@
     }
     return self;
 }
+
 -(void) viewWillAppear: (BOOL) animated {
     FlightDetailTBC *tbc=(FlightDetailTBC *)self.tabBarController;
     self.flight=tbc.flight;
@@ -55,6 +56,9 @@
 -(void) updatePredictionForTime{
     NSDate *curTime=[NSDate date];
     NSTimeInterval past=[curTime timeIntervalSinceDate:self.takeOffTime];
+    if(past<=0){
+        return;
+    }
     double total=[Flight durationForFlight:self.flight];
     double left=total-past;
     NSString *hoursStr=[NSString stringWithFormat:@"%.1f hours | %.1f hours",past/3600,left/3600];
@@ -63,6 +67,7 @@
     FlightDetailTBC *tbc=(FlightDetailTBC *)self.tabBarController;
     tbc.timePast=past;
 }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
