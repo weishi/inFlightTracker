@@ -13,6 +13,7 @@
 #import "AirportPin.h"
 #import <ImageIO/ImageIO.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <Social/Social.h>
 
 @interface FlightMapViewController ()
 
@@ -24,6 +25,33 @@
 - (void)awakeFromNib
 {
 
+}
+- (IBAction)sendTweet:(id)sender {
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        
+        SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        [mySLComposerSheet setInitialText:@"I'm on a plane!"];
+        
+        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://cs193p.stanford.edu"]];
+        
+        [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+            
+            switch (result) {
+                case SLComposeViewControllerResultCancelled:
+                    NSLog(@"Post Canceled");
+                    break;
+                case SLComposeViewControllerResultDone:
+                    NSLog(@"Post Sucessful");
+                    break;
+                    
+                default:
+                    break;
+            }
+        }];
+        
+        [self presentViewController:mySLComposerSheet animated:YES completion:nil];
+    }
 }
 
 - (IBAction)takePhoto:(id)sender {
