@@ -44,24 +44,6 @@
         NSLog(@"new path %@ for flight %@%@",path.timestamp, flight.airline, flight.flightNumber);
     }
     flight.path=pathSet;
-//    dispatch_queue_t fetchQ = dispatch_queue_create("flight fetcher", NULL);
-//    // put a block to do the fetch onto that queue
-//    dispatch_async(fetchQ, ^{
-//        NSURL *pathURL=[FlightFetcher URLforPathInAirline:flight.airline flightNumber:flight.flightNumber];
-//        NSData *data=[NSData dataWithContentsOfURL:pathURL];
-//        NSArray *pathInfoDic = [NSJSONSerialization JSONObjectWithData:data options:0 error:0];
-//        NSMutableSet *pathSet=[[NSMutableSet alloc]init];
-//        for(NSDictionary *entry in pathInfoDic){
-//            FlightPath *path=[FlightPath flightPathWithDict:entry inManagedObjectContext:context];
-//            path.flight=flight;
-//            [pathSet addObject:path];
-//            NSLog(@"new path %@ for flight %@%@",path.timestamp, flight.airline, flight.flightNumber);
-//        }
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            flight.path=pathSet;
-//
-//        });
-//    });
 }
 
 

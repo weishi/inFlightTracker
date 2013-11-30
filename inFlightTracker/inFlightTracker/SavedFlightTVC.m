@@ -74,7 +74,7 @@
 -(NSArray *)getSort{
     return @[[NSSortDescriptor sortDescriptorWithKey:@"departureDate"
                                            ascending:NO
-                                            selector:@selector(localizedStandardCompare:)]
+                                        ]
              ];
 }
 
@@ -86,7 +86,7 @@
     
     Flight *flight = [self.fetchedResultsController objectAtIndexPath:indexPath];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"dd-MM-yyyy HH:mm"];
+    [formatter setDateFormat:@"MMM-dd-yyyy"];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", flight.airline, flight.flightNumber];
     cell.detailTextLabel.text = [formatter stringFromDate:flight.departureDate];
     

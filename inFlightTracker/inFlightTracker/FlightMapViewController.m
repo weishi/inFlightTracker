@@ -17,6 +17,7 @@
 
 @interface FlightMapViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *twitterButton;
 @property (weak, nonatomic) IBOutlet MKMapView *flightMap;
 @end
 
@@ -163,6 +164,7 @@
         MKPolyline *route = overlay;
         MKPolylineRenderer *routeRenderer = [[MKPolylineRenderer alloc] initWithPolyline:route];
         routeRenderer.strokeColor = [UIColor blueColor];
+        routeRenderer.lineDashPattern =  [NSArray arrayWithObjects:[NSNumber numberWithInt:3], [NSNumber numberWithInt:3],nil];
         return routeRenderer;
     }
     else return nil;
@@ -171,6 +173,7 @@
 {
     [super viewDidLoad];
     self.flightMap.delegate = self;
+    [self.twitterButton addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)]];
 	// Do any additional setup after loading the view.
 }
 
@@ -205,6 +208,15 @@
     
     
     return locDict;
+}
+
+- (void)pan:(UIPanGestureRecognizer *)gesture{
+    if ((gesture.state == UIGestureRecognizerStateChanged) ||
+        (gesture.state == UIGestureRecognizerStateEnded)) {
+        CGPoint translation =[gesture translationInView:self.twitterButton];
+        self.twitterButton.center = CGPointMake(self.twitterButton.center.x+translation.x, self.twitterButton.center.y+translation.y);
+        [gesture setTranslation:CGPointZero inView:self.twitterButton];
+    }
 }
 
 @end

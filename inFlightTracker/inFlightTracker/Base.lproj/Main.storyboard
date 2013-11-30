@@ -434,6 +434,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <tabBarItem key="tabBarItem" title="Map" id="dQR-Ke-sbm"/>
                     <connections>
                         <outlet property="flightMap" destination="Phd-8l-iZZ" id="Ont-ju-vdJ"/>
+                        <outlet property="twitterButton" destination="sEk-LG-2of" id="m5w-eI-F47"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sG7-1u-wyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
