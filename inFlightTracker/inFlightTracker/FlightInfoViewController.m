@@ -9,6 +9,7 @@
 #import "FlightInfoViewController.h"
 #import "FlightDetailTBC.h"
 #import "Flight+Info.h"
+#import <CoreMotion/CoreMotion.h>
 
 @interface FlightInfoViewController ()
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
@@ -24,6 +25,41 @@
 - (IBAction)toggleAutoDetect:(id)sender {
     if([self.autoDetectSwitch isOn]){
         [self.datePicker setHidden:YES];
+        if([CMMotionActivityManager isActivityAvailable]) {
+            CMMotionActivityManager *cm = [[CMMotionActivityManager alloc] init];
+            NSDate *today = [NSDate date];
+            NSDate *checkSpan = [today dateByAddingTimeInterval:-(3600*12)];
+            [cm queryActivityStartingFromDate:checkSpan toDate:today toQueue:[NSOperationQueue mainQueue] withHandler:^(NSArray *activities, NSError *error){
+                BOOL foundAutomotive=NO;
+                BOOL foundTakeOffTime=NO;
+                for(int i=(int)[activities count]-1;i>=0;i--) {
+                    CMMotionActivity *a = [activities objectAtIndex:i];
+                    if(!foundAutomotive){
+                        if (a.automotive){
+                            foundAutomotive=YES;
+                        }
+                    }else{
+                        if(a.stationary || a.walking || a.running){
+                            self.takeOffTime=a.startDate;
+                            NSLog(@"found switch");
+                            foundTakeOffTime=YES;
+                            break;
+                        }
+                    }
+               }
+                if(!foundTakeOffTime){
+                    UIAlertView *alert = [[UIAlertView alloc]
+                                          initWithTitle: @"Auto Detection"
+                                          message: @"No in flight motion detected!"
+                                          delegate: nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+                    [alert show];
+                    self.autoDetectSwitch.on=NO;
+                    [self.datePicker setHidden:NO];
+                }
+            }];
+        }
     }else{
         [self.datePicker setHidden:NO];
     }
@@ -37,23 +73,17 @@
     [self updatePredictionForTime];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 -(void) viewWillAppear: (BOOL) animated {
     FlightDetailTBC *tbc=(FlightDetailTBC *)self.tabBarController;
     self.flight=tbc.flight;
     self.context = tbc.context;
-    self.takeOffTime=[NSDate date];
+    self.takeOffTime=nil;
 }
 
 -(void) updatePredictionForTime{
+    if (self.takeOffTime==nil) {
+        return;
+    }
     NSDate *curTime=[NSDate date];
     NSTimeInterval past=[curTime timeIntervalSinceDate:self.takeOffTime];
     if(past<=0){
@@ -61,7 +91,7 @@
     }
     double total=[Flight durationForFlight:self.flight];
     double left=total-past;
-    NSString *hoursStr=[NSString stringWithFormat:@"%.1f hours | %.1f hours",past/3600,left/3600];
+    NSString *hoursStr=[NSString stringWithFormat:@"%@ | %@",[self formattedTime:past],[self formattedTime:left]];
     self.hours.text=hoursStr;
     [self.progressBar setProgress:past/total animated:YES];
     FlightDetailTBC *tbc=(FlightDetailTBC *)self.tabBarController;
@@ -71,6 +101,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.takeOffTime=nil;
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updatePredictionForTime) userInfo:nil repeats:YES];
+
+}
+
+- (NSString *)formattedTime:(int)totalSeconds
+{
+    
+    int seconds = totalSeconds % 60;
+    int minutes = (totalSeconds / 60) % 60;
+    int hours = totalSeconds / 3600;
+    
+    return [NSString stringWithFormat:@"%02d:%02d:%02d",hours, minutes, seconds];
 }
 
 - (void)viewDidLayoutSubviews {
