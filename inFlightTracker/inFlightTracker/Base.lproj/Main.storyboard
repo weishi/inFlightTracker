@@ -343,7 +343,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvz-br-rZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1130" y="-354"/>
+            <point key="canvasLocation" x="1130" y="-1012"/>
         </scene>
         <!--Flight Path View Controller - Flight Path-->
         <scene sceneID="0ED-V4-a5h">
@@ -388,7 +388,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFu-BU-XYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1130" y="382"/>
+            <point key="canvasLocation" x="1130" y="-276"/>
         </scene>
         <!--Flight Map View Controller - Map-->
         <scene sceneID="Ein-iI-Hxw">
@@ -439,7 +439,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sG7-1u-wyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1130" y="1026"/>
+            <point key="canvasLocation" x="1130" y="368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ioo-QP-Eds">

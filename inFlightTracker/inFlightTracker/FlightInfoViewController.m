@@ -41,6 +41,9 @@
                     }else{
                         if(a.stationary || a.walking || a.running){
                             self.takeOffTime=a.startDate;
+                            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                            [dateFormatter setDateFormat:@"MMM. dd HH:mm"];
+                            self.dateLabel.text = [dateFormatter stringFromDate:self.takeOffTime];
                             NSLog(@"found switch");
                             foundTakeOffTime=YES;
                             break;

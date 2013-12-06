@@ -31,10 +31,9 @@
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         
         SLComposeViewController *mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        
-        [mySLComposerSheet setInitialText:@"I'm on a plane!"];
-        
-        [mySLComposerSheet addURL:[NSURL URLWithString:@"http://cs193p.stanford.edu"]];
+        FlightPath *cur=[self getCurrentPosition:self.timePast ForFlight:self.flight];
+        NSString *body=[NSString stringWithFormat:@"I'm on a plane(%@,%@).", cur.latitude, cur.longitude];
+        [mySLComposerSheet setInitialText:body];
         
         [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
             
